@@ -1,0 +1,5 @@
+source <(skaffold completion zsh)
+source <(minikube completion zsh)
+source <(kompose completion zsh)
+source <(helm completion zsh)
+source <(stern --completion=zsh)

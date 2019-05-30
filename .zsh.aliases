@@ -1,0 +1,69 @@
+### Commands:
+export PATH=$PATH:$HOME/.local/bin/
+
+### Aliases:
+
+# pkg mgmt
+alias aptupd="sudo apt update; sudo apt list --upgradable"
+alias aptupg="sudo apt upgrade"
+alias aptsch="sudo apt search "
+alias aptins="sudo apt install "
+
+# commands
+alias zal="cat $HOME/.zsh-aliases.txt | grep "
+alias p10="sudo ping -c10"
+alias pwlight="pwgen -1BvcN1"
+
+# mounts
+alias mcdr="sudo mount /dev/cdrom /mnt/cdrom/"
+alias umcdr="sudo umount /mnt/cdrom/"
+
+# sync
+alias pushpass="pass git push -u --all"
+alias pullpass="pass git pull origin master"
+
+# ansible
+alias apb="ansible-playbook"
+alias apb-local="ansible-playbook -i environments/localhost/hosts"
+alias apb-develop="ansible-playbook -i environments/develop/hosts"
+alias apb-staging="ansible-playbook -i environments/staging/hosts"
+alias apb-production="ansible-playbook -i environments/production/hosts"
+
+# terraform
+alias tf="terraform"
+alias tfi="terraform init"
+alias tfit="terraform init -var-file=testing.tfvars -backend-config=backend.tfvars"
+alias tfid="terraform init -var-file=develop.tfvars"
+alias tfis="terraform init -var-file=staging.tfvars"
+alias tfip="terraform init -var-file=production.tfvars"
+alias tfp="terraform plan"
+alias tfpt="terraform plan -var-file=testing.tfvars"
+alias tfpd="terraform plan -var-file=develop.tfvars"
+alias tfps="terraform plan -var-file=staging.tfvars"
+alias tfpp="terraform plan -var-file=production.tfvars"
+alias tfa="terraform apply"
+alias tfat="terraform apply -var-file=testing.tfvars"
+alias tfad="terraform apply -var-file=develop.tfvars"
+alias tfas="terraform apply -var-file=staging.tfvars"
+alias tfap="terraform apply -var-file=production.tfvars"
+alias tfaaa="terraform apply -auto-approve"
+alias tfaaat="terraform apply -auto-approve -var-file=testing.tfvars"
+alias tfaaad="terraform apply -auto-approve -var-file=develop.tfvars"
+alias tfaaas="terraform apply -auto-approve -var-file=staging.tfvars"
+alias tfaaap="terraform apply -auto-approve -var-file=production.tfvars"
+alias tfd="terraform destroy" 
+alias tfdfix="TF_WARN_OUTPUT_ERRORS=1 terraform destroy" 
+alias tfs="terraform state"
+alias tfv="terraform validate"
+alias tfw="terraform workspace"
+alias tfo="terraform output"
+alias tfws="terraform workspace select"
+alias tfwn="terraform workspace new"
+alias tfwl="terraform workspace list"
+alias tfwd="terraform workspace delete"
+
+# kubernetes
+alias kp="kube-prompt"
+
+# hadolint
+alias hdlt="docker run --rm -i hadolint/hadolint < "
