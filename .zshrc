@@ -1,14 +1,18 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
+# export LANG=en_US.UTF-8
+# export ARCHFLAGS="-arch x86_64"
 
 ### PowerLevel9k configs:
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(kube_ps1 ssh context dir vcs status root_indicator)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(aws kube_ps1 ssh os_icon context dir vcs status root_indicator)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=Default
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ### Zsh configs:
 # ZSH_THEME="agnoster"
@@ -26,17 +30,13 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 # plugins=(git debian docker kubectl npm vscode dircycle common-aliases)
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
-# export LANG=en_US.UTF-8
-# export ARCHFLAGS="-arch x86_64"
 source $ZSH/oh-my-zsh.sh
 
 ### User configs:
 EDITOR=nano
 DEFAULT_USER=`whoami`
 
-source /usr/local/bin/kube-ps1.sh
+source $HOME/.antigen/bundles/jonmosco/kube-ps1/kube-ps1.sh
 prompt_kube_ps1(){
    echo -n `kube_ps1`
 }
