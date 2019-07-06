@@ -3,5 +3,9 @@ source <(skaffold completion zsh)
 source <(minikube completion zsh)
 source <(helm completion zsh)
 source <(stern --completion=zsh)
+source /usr/share/google-cloud-sdk/completion.zsh.inc
+source ${HOME}/.local/bin/aws_zsh_completer.sh
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform

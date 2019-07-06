@@ -50,8 +50,6 @@ KUBE_PS1_SUFFIX=" "
 KUBE_PS1_SYMBOL_USE_IMG=true
 PROMPT='$(kube_ps1)'$PROMPT
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
 source ~/.zsh.comp
 source ~/.zsh.env
 source ~/.zsh.aliases
