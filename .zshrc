@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH
+export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 # export LANG=en_US.UTF-8
 # export ARCHFLAGS="-arch x86_64"
