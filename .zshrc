@@ -64,6 +64,7 @@ antigen bundles <<EOBUNDLES
         docker
         fasd
         kubectl
+        aws
         npm
         vscode
         dircycle
