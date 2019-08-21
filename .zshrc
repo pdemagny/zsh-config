@@ -1,3 +1,4 @@
+# shellcheck disable=all
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH
@@ -49,6 +50,7 @@ KUBE_PS1_SEPARATOR=""
 KUBE_PS1_SUFFIX=" "
 KUBE_PS1_SYMBOL_USE_IMG=true
 PROMPT='$(kube_ps1)'$PROMPT
+PROMPT_EOL_MARK=''
 
 source ~/.zsh.comp
 source ~/.zsh.env
