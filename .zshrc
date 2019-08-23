@@ -1,6 +1,8 @@
 # shellcheck disable=all
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+export FZF_BASE="/usr/bin/fzf"
+export FZF_DEFAULT_OPTS='--height 20% --layout=reverse --border'
 export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 # export LANG=en_US.UTF-8
@@ -65,6 +67,7 @@ antigen bundles <<EOBUNDLES
         debian
         docker
         fasd
+        fzf
         kubectl
         aws
         npm

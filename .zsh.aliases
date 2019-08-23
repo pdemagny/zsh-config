@@ -47,3 +47,12 @@ alias tfwd="terraform workspace delete"
 
 # hadolint
 alias hdlt="docker run --rm -i hadolint/hadolint < "
+
+# xrandr
+alias xrlm="xrandr --listmonitors"
+alias xra="xrandr --auto"
+alias xrm="xrandr --output DP-1 --same-as eDP-1"
+alias xrdr="xrandr --output DP-1 --right-of eDP-1"
+alias xrdl="xrandr --output DP-1 --left-of eDP-1"
+alias xr32="xrandr --output DP-1 --mode 2560x1440"
+alias xr27="xrandr --output DP-1 --mode 1920x1080"
