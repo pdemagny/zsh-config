@@ -1,11 +1,13 @@
-source <(kubectl completion zsh)
-source <(skaffold completion zsh)
-source <(minikube completion zsh)
-source <(helm completion zsh)
-source <(stern --completion=zsh)
-source /usr/share/google-cloud-sdk/completion.zsh.inc
-source ${HOME}/.local/bin/aws_zsh_completer.sh
-fpath=(~/.zsh/completions $fpath)
+source <(npm completion)
 autoload -U compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+source <(kubectl completion zsh)
+source <(skaffold completion zsh)
+source <(minikube completion zsh)
+source <(stern --completion=zsh)
+source <(helm completion zsh)
+source /usr/share/google-cloud-sdk/completion.zsh.inc
+source ${HOME}/.local/bin/aws_zsh_completer.sh
+fpath=(~/.zsh/completions $fpath)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

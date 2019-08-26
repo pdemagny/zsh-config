@@ -1,15 +1,12 @@
 # shellcheck disable=all
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-export FZF_BASE="/usr/bin/fzf"
-export FZF_DEFAULT_OPTS='--height 20% --layout=reverse --border'
-export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 # export LANG=en_US.UTF-8
 # export ARCHFLAGS="-arch x86_64"
 
 ### PowerLevel9k configs:
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(aws kube_ps1 ssh os_icon context dir vcs status root_indicator)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(aws ssh os_icon context dir vcs status root_indicator)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -54,9 +51,7 @@ KUBE_PS1_SYMBOL_USE_IMG=true
 PROMPT='$(kube_ps1)'$PROMPT
 PROMPT_EOL_MARK=''
 
-source ~/.zsh.comp
 source ~/.zsh.env
-source ~/.zsh.aliases
 
 ### Antigen configs:
 source /usr/share/zsh-antigen/antigen.zsh
@@ -70,6 +65,7 @@ antigen bundles <<EOBUNDLES
         fzf
         kubectl
         aws
+        lukechilds/zsh-nvm
         npm
         vscode
         dircycle
@@ -83,3 +79,6 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 antigen theme romkatv/powerlevel10k
 antigen apply
+
+source ~/.zsh.comp
+source ~/.zsh.aliases
