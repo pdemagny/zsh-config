@@ -4,21 +4,14 @@
 alias zal="cat $HOME/.zsh-aliases.txt | grep "
 alias p3="sudo ping -c3"
 alias pwlight="pwgen -1BvcN1"
-
+alias kcleaner="FZF_DEFAULT_OPTS='' kcleaner"
 # mounts
 alias mcdr="sudo mount /dev/cdrom /mnt/cdrom/"
 alias umcdr="sudo umount /mnt/cdrom/"
 
-# sync
+# pass
 alias pushpass="pass git push -u --all"
 alias pullpass="pass git pull origin master"
-
-# ansible
-alias apb="ansible-playbook"
-alias apb-local="ansible-playbook -i environments/localhost/hosts"
-alias apb-develop="ansible-playbook -i environments/develop/hosts"
-alias apb-staging="ansible-playbook -i environments/staging/hosts"
-alias apb-production="ansible-playbook -i environments/production/hosts"
 
 # terraform
 alias tf="terraform"
@@ -56,6 +49,5 @@ alias xrdr="xrandr --output DP-1 --right-of eDP-1"
 alias xrdl="xrandr --output DP-1 --left-of eDP-1"
 alias xr32="xrandr --output DP-1 --mode 2560x1440"
 alias xr27="xrandr --output DP-1 --mode 1920x1080"
-
-# aws
-alias ecrlogin="\$(asp ekssm && aws ecr get-login --no-include-email)"
+alias xrof="xr32 && xrdr"
+alias xrho="xr27 && xrdr"
