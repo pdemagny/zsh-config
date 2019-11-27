@@ -1,12 +1,9 @@
 #zmodload zsh/zprof
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-# export MANPATH="/usr/local/man:$MANPATH"
-# export LANG=en_US.UTF-8
-# export ARCHFLAGS="-arch x86_64"
 
 ### PowerLevel9k configs:
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(kube_ps1 aws ssh os_icon context dir vcs status root_indicator)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(kube_ps1 aws os_icon ssh context dir vcs status root_indicator)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -15,21 +12,7 @@ POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 ### Zsh configs:
-# ZSH_THEME="agnoster"
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-# CASE_SENSITIVE="true"
-# HYPHEN_INSENSITIVE="true"
-# DISABLE_AUTO_UPDATE="true"
-# DISABLE_UPDATE_PROMPT="true"
-# export UPDATE_ZSH_DAYS=13
-# DISABLE_MAGIC_FUNCTIONS=true
-# DISABLE_LS_COLORS="true"
-# DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="true"
-# COMPLETION_WAITING_DOTS="true"
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
-# plugins=(git debian docker kubectl npm vscode dircycle common-aliases)
 source $ZSH/oh-my-zsh.sh
 
 ### User configs:
@@ -37,7 +20,7 @@ EDITOR=nano
 DEFAULT_USER=`whoami`
 
 source $HOME/.antigen/bundles/jonmosco/kube-ps1/kube-ps1.sh
-prompt_kube_ps1() { echo -n `kube_ps1`; }
+prompt_kube_ps1() { echo -n $(kube_ps1); }
 get_cluster_short() { if [[ "$1" =~ ^arn:aws:eks ]]; then echo "$1" | rev | cut -d'/' -f 1 | rev; fi; }
 KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
 KUBE_PS1_SYMBOL_COLOR=white
@@ -54,7 +37,7 @@ PROMPT_EOL_MARK=''
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-source ~/.zsh.env
+source $HOME/.zsh.env
 
 ### Antigen configs:
 source /usr/share/zsh-antigen/antigen.zsh
@@ -64,7 +47,7 @@ antigen bundles <<EOBUNDLES
         git
         debian
         docker
-	docker-compose
+        docker-compose
         fasd
         fzf
         asdf
@@ -86,8 +69,11 @@ EOBUNDLES
 #antigen theme romkatv/powerlevel10k
 antigen apply
 
-source ~/.zsh.comp
-source ~/.zsh.aliases
+source $HOME/.zsh.comp
+source $HOME/.zsh.aliases
+
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 ### Utility functions
 join_array() { local IFS="$1"; shift; echo "$*"; }
@@ -119,5 +105,4 @@ ekskov() {
 }
 #ozprof
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export NPM_TOKEN="c55fc806-a5cf-4286-ab41-00b9f9da4543"
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
